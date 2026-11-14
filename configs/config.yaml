@@ -1,0 +1,19 @@
+seed: 42
+dataset:
+  name: "cqadupstack"
+  subforum: "unix"
+  url: "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/cqadupstack.zip"
+  held_out_regex: '\b(ssh|sshd|scp|sftp|iptables|ufw|nmap|tcpdump|apt|apt-get|dpkg|yum|rpm|pacman|brew|vim|vi|nvim|emacs|nano|git|svn|mercurial|cron|crontab|systemd|systemctl|init\.d|zsh|csh|tcsh|fish)\b'
+
+splits:
+  val_path: "data_splits/val_ids.json"
+  test_path: "data_splits/test_ids_frozen.json"
+  frozen_test_sha256: "decc77b8a8ef3745a09b2d34bb5b410613638fc720e96dbd9406601a6a6150bb"
+
+baseline:
+  type: "bm25"
+
+proposal_rag:
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  llm_model: "Qwen/Qwen2.5-3B-Instruct"
+  top_k: 5

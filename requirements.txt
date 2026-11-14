@@ -1,0 +1,11 @@
+beir
+rank-bm25
+scikit-learn
+numpy
+pyyaml
+sentence-transformers
+faiss-cpu
+transformers
+accelerate
+bitsandbytes
+torch
